@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)b5a+#(k8_wc*f7m!aa3k2d(36833%f_m+h*vl6-gv#(rdy)&_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Media files (uploaded by users)
 MEDIA_URL = '/media/'  
@@ -42,8 +42,6 @@ STATICFILES_DIRS = [
 # Directorio para almacenar archivos estáticos recopilados (opcional, para producción)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,7 +57,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -86,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'VercelDeploy.wsgi.app'
+ASGI_APPLICATION = 'tu_proyecto.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases

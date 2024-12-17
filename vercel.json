@@ -1,14 +1,19 @@
 {
-    "builds" : [
-        {
-            "src": "ProyectoApi/wsgi.py",
-            "use": "@vercel/python"
+    "version": 2,
+    "builds": [
+      {
+        "src": "manage.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "50mb"
         }
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "ProyectoApi/wsgi.py"
-        }
+      {
+        "src": "/(.*)",
+        "dest": "manage.py"
+      }
     ]
-}
+  }
+  
